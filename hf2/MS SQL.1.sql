@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[Termek](
+	[TERMEKKOD] [nvarchar](255) NOT NULL,
+	[MEGNEVEZES] [nvarchar](255) MASKED WITH (Function = 'partial(1,"XXX",1)') NULL,
+	[KAT_ID] [int] MASKED WITH (FUNCTION = 'random(1,5)') NULL,
+	[LISTAAR] [float] NULL,
+	[LEIRAS] [nvarchar](255) NULL,
+	[RAKTAR_KOD] [int] MASKED WITH (Function = 'default()') NULL,
+	[KESZLET] [float] NULL,
+	[MEGYS] [nvarchar](255) NULL,
+	[FELVITTE] [nvarchar](255) NULL,
+	[FELVITEL] [date] NULL,
+ CONSTRAINT [PK_Termek] PRIMARY KEY CLUSTERED 
+(
+	[TERMEKKOD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
